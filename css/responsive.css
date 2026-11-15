@@ -1,0 +1,149 @@
+@media(max-width:860px) {
+    #menu {
+        display: grid;
+    }
+
+    nav {
+        position: fixed;
+        top: calc(64px + env(safe-area-inset-top, 0));
+        left: 0;
+        right: 0;
+        background: var(--bg);
+        border-bottom: 1px solid var(--bd);
+        transform: translateY(-130%);
+        transition: transform .35s;
+        padding: 12px 20px 20px;
+    }
+
+    nav.open {
+        transform: none;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav a.l {
+        padding: 14px;
+    }
+
+    section {
+        padding: 72px 0;
+    }
+}
+
+@media(max-width:333px) {
+    .hero h1 .o {
+        margin-left: 0px;
+    }
+}
+
+@media(min-width: 860px) and (max-width: 1000px) {
+    nav a.l {
+        font-size: 0.8rem;
+        padding: 6px 8px;
+    }
+
+    nav ul {
+        gap: 4px;
+    }
+}
+
+@media(max-width:860px) {
+    .header-cta {
+        display: none;
+    }
+
+    .modal-panel {
+        padding: 32px 22px
+    }
+
+    .modal-panel h2 {
+        font-size: 34px
+    }
+
+    .carousel-btn {
+        margin-top: 15px;
+        position: relative;
+    }
+}
+
+/* ================= orbit RESPONSIVE BREAKPOINTS ================= */
+@media (max-width: 960px) {
+    .orbit-stage {
+        aspect-ratio: 1 / 0.88;
+    }
+}
+
+@media (max-width: 640px) {
+    .orbit-stage {
+        width: 100%;
+        aspect-ratio: 1 / 1.05;
+        min-height: 370px;
+    }
+
+    .orbit-ellipse {
+        width: 98%;
+        height: 40%;
+    }
+}
+
+@media (max-width: 390px) {
+    .skill-node {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.56rem;
+        letter-spacing: 0.04em;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .orbit-ring-circle,
+    .orbit-pulse,
+    .sun-core,
+    .skill-node {
+        animation: none !important;
+    }
+}
+
+/*-------------------orbit end------------*/
+
+@media(max-width:860px) {
+    .proj {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .proj:nth-child(even) .mock {
+        order: 0;
+    }
+}
+
+@media(max-width:1000px) {
+    .ft-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .ft-brand {
+        grid-column: 1/-1;
+    }
+}
+
+@media(max-width:560px) {
+    .site-footer {
+        padding-top: 56px
+    }
+
+    .ft-grid {
+        gap: 32px 20px
+    }
+
+    .ft-word {
+        margin: 40px 0 20px
+    }
+
+    .ft-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
