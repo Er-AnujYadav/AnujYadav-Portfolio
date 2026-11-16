@@ -1,5 +1,7 @@
-/* interactions.js — timeline, cursor, tilt, magnetic buttons */
-/* timeline expand */
+/* ---------interactions.js — timeline, cursor, tilt, magnetic buttons-------- */
+
+/* -----timeline expand ---------*/
+
 $$(".tl .it[tabindex]").forEach((i) => {
   const t = () => {
     const o = i.classList.toggle("open");
@@ -14,7 +16,8 @@ $$(".tl .it[tabindex]").forEach((i) => {
   };
 });
 
-/* desktop-only effects: cursor, tilt, magnetic buttons */
+/*-------desktop-only effects: cursor, tilt, magnetic buttons--------*/
+
 if (matchMedia("(hover:hover) and (pointer:fine)").matches && !rm) {
   const cu = $("#cur");
   addEventListener(

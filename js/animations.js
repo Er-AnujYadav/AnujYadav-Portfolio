@@ -1,5 +1,6 @@
-/* animations.js — typed role, scroll reveal, progress, back-to-top */
-/* typed role */
+/*---------animations.js — typed role, scroll reveal, progress, back-to-top------*/
+
+/*---------typed role-----------*/
 const roles = [
   "Aspiring Software Engineer",
   "Web Developer",
@@ -27,7 +28,8 @@ let ri = 0,
   setTimeout(type, del ? 35 : 80);
 })();
 
-/* reveal */
+/*----------reveal----------*/
+
 const io = new IntersectionObserver(
   (es) =>
     es.forEach((e) => {
@@ -40,7 +42,8 @@ const io = new IntersectionObserver(
 );
 $$(".rv").forEach((e) => io.observe(e));
 
-/* active link, progress, back to top */
+/*---------active link, progress, back to top-------*/
+
 const secs = $$("main section"),
   links = $$("nav a.l");
 function onScroll() {

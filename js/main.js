@@ -2,7 +2,7 @@ const CONFIG = {
   // email: "",
   github: "https://github.com/Er-AnujYadav",
   linkedin: "https://www.linkedin.com/in/er-anujyadav",
-  photo: "assets/images/professional.png",
+  photo: "assets/images/professional.jpg",
   // projects: {
   //   hr: { github: "", demo: "" },
   //   med: { github: "", demo: "" },
@@ -215,65 +215,65 @@ $$("[data-close-modal]").forEach((el) =>
 /*---------------slider---------------------*/
 
 document.addEventListener("DOMContentLoaded", () => {
-    const slides = document.querySelectorAll(".carousel-slide");
-    const dots = document.querySelectorAll(".dot");
-    const prevBtn = document.querySelector(".prev-btn");
-    const nextBtn = document.querySelector(".next-btn");
-    
-    let currentIndex = 0;
-    let autoPlayTimer;
+  const slides = document.querySelectorAll(".carousel-slide");
+  const dots = document.querySelectorAll(".dot");
+  const prevBtn = document.querySelector(".prev-btn");
+  const nextBtn = document.querySelector(".next-btn");
 
-    function showSlide(index) {
-        // Boundary conditions check
-        if (index >= slides.length) {
-            currentIndex = 0;
-        } else if (index < 0) {
-            currentIndex = slides.length - 1;
-        } else {
-            currentIndex = index;
-        }
+  let currentIndex = 0;
+  let autoPlayTimer;
 
-        // Remove active class from all slides and dots
-        slides.forEach(slide => slide.classList.remove("active"));
-        dots.forEach(dot => dot.classList.remove("active"));
-
-        // Add active class to current slide and dot
-        slides[currentIndex].classList.add("active");
-        dots[currentIndex].classList.add("active");
+  function showSlide(index) {
+    // Boundary conditions check
+    if (index >= slides.length) {
+      currentIndex = 0;
+    } else if (index < 0) {
+      currentIndex = slides.length - 1;
+    } else {
+      currentIndex = index;
     }
 
-    // Next button click
-    nextBtn.addEventListener("click", () => {
-        showSlide(currentIndex + 1);
-        resetAutoPlay();
+    // Remove active class from all slides and dots
+    slides.forEach((slide) => slide.classList.remove("active"));
+    dots.forEach((dot) => dot.classList.remove("active"));
+
+    // Add active class to current slide and dot
+    slides[currentIndex].classList.add("active");
+    dots[currentIndex].classList.add("active");
+  }
+
+  // Next button click
+  nextBtn.addEventListener("click", () => {
+    showSlide(currentIndex + 1);
+    resetAutoPlay();
+  });
+
+  // Previous button click
+  prevBtn.addEventListener("click", () => {
+    showSlide(currentIndex - 1);
+    resetAutoPlay();
+  });
+
+  // Dot click functionality
+  dots.forEach((dot, idx) => {
+    dot.addEventListener("click", () => {
+      showSlide(idx);
+      resetAutoPlay();
     });
+  });
 
-    // Previous button click
-    prevBtn.addEventListener("click", () => {
-        showSlide(currentIndex - 1);
-        resetAutoPlay();
-    });
+  // Auto Play function (har 4 seconds me slide change hogi)
+  function startAutoPlay() {
+    autoPlayTimer = setInterval(() => {
+      showSlide(currentIndex + 1);
+    }, 4000);
+  }
 
-    // Dot click functionality
-    dots.forEach((dot, idx) => {
-        dot.addEventListener("click", () => {
-            showSlide(idx);
-            resetAutoPlay();
-        });
-    });
-
-    // Auto Play function (har 4 seconds me slide change hogi)
-    function startAutoPlay() {
-        autoPlayTimer = setInterval(() => {
-            showSlide(currentIndex + 1);
-        }, 4000);
-    }
-
-    function resetAutoPlay() {
-        clearInterval(autoPlayTimer);
-        startAutoPlay();
-    }
-
-    // Start auto play on page load
+  function resetAutoPlay() {
+    clearInterval(autoPlayTimer);
     startAutoPlay();
+  }
+
+  // Start auto play on page load
+  startAutoPlay();
 });
