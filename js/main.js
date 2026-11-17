@@ -1,5 +1,5 @@
 const CONFIG = {
-  // email: "",
+  email: "anujyadav.cs@gmail.com",
   github: "https://github.com/Er-AnujYadav",
   linkedin: "https://www.linkedin.com/in/er-anujyadav",
   photo: "assets/images/professional.jpg",
@@ -12,7 +12,7 @@ const CONFIG = {
 };
 
 const getIcon = (name) => {
-  // if(name === "Email") return '<i class="fa-solid fa-envelope"></i>';
+  if(name === "Email") return '<i class="fa-solid fa-envelope"></i>';
   if (name === "LinkedIn") return '<i class="fa-brands fa-linkedin"></i>';
   if (name === "GitHub") return '<i class="fa-brands fa-github"></i>';
   return "";
@@ -117,7 +117,7 @@ $("#skillgrid").innerHTML = Object.entries(skills)
 /* ------------------contact---------------- */
 
 const c = [
-  // ["Email", CONFIG.email && "mailto:" + CONFIG.email],
+  ["Email", CONFIG.email && "mailto:" + CONFIG.email],
   ["LinkedIn", CONFIG.linkedin],
   ["GitHub", CONFIG.github],
 ];
@@ -131,7 +131,7 @@ $("#clinks").innerHTML = c
 $("#yr").textContent = new Date().getFullYear();
 
 const ftl = [
-  // ["Email", CONFIG.email && "mailto:" + CONFIG.email],
+  ["Email", CONFIG.email && "mailto:" + CONFIG.email],
   ["LinkedIn", CONFIG.linkedin],
   ["GitHub", CONFIG.github],
 ];
